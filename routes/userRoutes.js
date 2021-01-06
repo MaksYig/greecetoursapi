@@ -18,7 +18,7 @@ router.get(
   userController.getMe,
   userController.getUserById
 );
-router.get('/isLogged__in', authController.protect);
+router.get('/isLogged__in', authController.isLoogedIn);
 
 router.patch(
   '/updateMe',
