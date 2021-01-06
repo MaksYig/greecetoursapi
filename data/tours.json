@@ -1,0 +1,59 @@
+[
+  {
+    "startLocation": {
+      "description": "Kalithea Metro, Athens",
+      "type": "Point",
+      "coordinates": [-80.185942, 25.774772],
+      "address": "301 Biscayne Blvd",
+      "startTime": "2021-06-19T09:00:00.000Z"
+    },
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 6,
+    "images": ["val-1.jpg", "val-2.jpg", "val-3.jpg"],
+    "startDates": [
+      {
+        "date": "2021-06-19T09:00:00.000Z"
+      },
+      {
+        "date": "2021-10-23T09:00:00.000Z"
+      },
+      {
+        "date": "2021-03-04T09:00:00.000Z"
+      }
+    ],
+    "_id": "5c88fa8cf4afda39709c2955",
+    "name": "Valugmeni Lake",
+    "duration": 1,
+    "maxGroupSize": 15,
+    "difficulty": "medium",
+    "guides": ["5fd2c3f1d74d972af84ff108", "5fde31322dc7935a04cb0e86"],
+    "price": 40,
+    "summary": "Exploring the jaw-dropping US east coast by foot and by boat",
+    "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "imageCover": "val.jpg",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c2959",
+        "description": "Lummus Park Beach",
+        "type": "Point",
+        "coordinates": [-80.128473, 25.781842],
+        "day": 1,
+        "address": "Somewhere str, 56a"
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2958",
+        "description": "Valugmeni Lake",
+        "type": "Point",
+        "coordinates": [-80.647885, 24.909047],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c2956",
+        "description": "Dinner",
+        "type": "Point",
+        "coordinates": [-81.768719, 24.552242],
+        "day": 1
+      }
+    ]
+  }
+]
