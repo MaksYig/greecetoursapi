@@ -168,7 +168,7 @@ exports.isLoggedInAPI = async (req, res, next) => {
       return next();
     }
   } else {
-    res.status(403).json({
+    res.json({
       status: 'Fail',
       userLogged: false,
     });
