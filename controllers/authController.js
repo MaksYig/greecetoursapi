@@ -22,7 +22,7 @@ const createSendToken = (user, statusCode, req, res) => {
     ),
     httpOnly: true,
   };
-  if (process.env.NODE__ENV === 'production') {
+  if (req.secure || req.headers('x-forwarded-proto') === 'https') {
     cookieOptions.secure = true;
   }
   /* (req.secure || req.headers('x-forwarded-proto') === 'https') - use this only when web online */
@@ -168,9 +168,10 @@ exports.isLoggedInAPI = async (req, res, next) => {
       return next();
     }
   } else {
-    res.json({
+    res.status(200).json({
       status: 'Fail',
       userLogged: false,
+      meassage: 'The user doesnt have Auth token',
     });
     return next();
   }
