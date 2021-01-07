@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -12,7 +13,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const app = express();
 
 app.enable('trust proxy');
-
+app.use(session({ cookie: { sameSite: true } }));
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.options('*', cors());
 
