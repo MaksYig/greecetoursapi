@@ -5,7 +5,6 @@ const User = require('./../models/userModel');
 const catchAsync = require('./../util/catchAsync');
 const Email = require('./../util/email');
 const AppError = require('./../util/appError');
-const { fail } = require('assert');
 
 //create secret body for user
 const signToken = (id) => {
@@ -22,9 +21,9 @@ const createSendToken = (user, statusCode, req, res) => {
     ),
     httpOnly: true,
   };
-  if (req.secure || req.headers('x-forwarded-proto') === 'https') {
-    cookieOptions.secure = true;
-  }
+  // if (req.secure || req.headers('x-forwarded-proto') === 'https') {
+  //   cookieOptions.secure = true;
+  // }
   /* (req.secure || req.headers('x-forwarded-proto') === 'https') - use this only when web online */
   /* (process.env.NODE__ENV === 'production')--only for dev mode */
 
