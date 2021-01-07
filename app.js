@@ -13,7 +13,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const app = express();
 
 app.enable('trust proxy');
-app.use(session({ cookie: { sameSite: true } }));
+// app.use(session({ cookie: { sameSite: true } }));
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.options('*', cors());
 
