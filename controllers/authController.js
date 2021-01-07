@@ -20,6 +20,7 @@ const createSendToken = (user, statusCode, req, res) => {
       Date.now() + process.env.JWT_COOKIE_EXP_IN * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
+    sameSite: true,
     secure: true, //set to true if your using https
   };
   // if (req.secure || req.headers('x-forwarded-proto') === 'https') {
