@@ -14,14 +14,15 @@ const signToken = (id) => {
 };
 
 const createSendToken = (user, statusCode, req, res) => {
-  const token = signToken(user.id);
+  const token = signToken(user._id);
   const cookieOptions = {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXP_IN * 24 * 60 * 60 * 1000
     ),
-    sameSite: 'None',
+    sameSite: 'None', //for sending JWT also to local host check
     httpOnly: true,
-    secure: req.secure || req.headers('x-forwarded-proto') === 'https',
+    secure: true,
+    // secure: req.secure || req.headers('x-forwarded-proto') === 'https',
   };
 
   /* (req.secure || req.headers('x-forwarded-proto') === 'https') - use this only when web online */
@@ -88,7 +89,9 @@ exports.login = catchAsync(async (req, res, next) => {
 exports.logout = (req, res) => {
   res.cookie('jwt', 'loggedout', {
     expires: new Date(Date.now() + 10 * 1000),
+    sameSite: 'None', //for sending JWT also to local host check
     httpOnly: true,
+    secure: true,
   });
   res.status(200).json({
     status: 'Success',
@@ -106,7 +109,6 @@ exports.protect = catchAsync(async (req, res, next) => {
     token = req.headers.authorization.split(' ')[1];
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt;
-    console.log(token);
   }
   if (!token) {
     return next(
