@@ -88,7 +88,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
 exports.logout = (req, res) => {
   res.cookie('jwt', 'loggedout', {
-    expires: new Date(Date.now() + 5 * 1000),
+    expires: new Date(Date.now() + 3 * 1000),
     sameSite: 'None', //for sending JWT also to local host check
     httpOnly: true,
     secure: true,
