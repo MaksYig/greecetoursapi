@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -12,6 +13,7 @@ const globalErrorHandler = require('./controllers/errorController');
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.enable('trust proxy');
 // app.use(session({ cookie: { sameSite: true } }));
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
